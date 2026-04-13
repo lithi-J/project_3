@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background-image: url("mount.avif");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 420px;
+            width: 100%;
+        }
+
+        .imagi1 {
+            margin-right: 5%;
+        }
+
+        .menu__bar {
+            background-color: black;
+            height: 80px;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 5%;
+        }
+
+        .menu__bar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .menu__bar ul li {
+            padding: 10px 30px;
+        }
+
+        .menu__bar ul li a {
+            color: aliceblue;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .menu__bar ul li a:hover {
+            color: orangered;
+        }
+
+        .dropdown_menu {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: var(--color-black);
+        }
+
+        .dropdown_menu ul {
+            display: block;
+            margin: 10px;
+        }
+
+        .dropdown_menu ul li {
+            width: 150px;
+            padding: 10px;
+        }
+
+        button {
+            color: aliceblue;
+            background-color: rgb(3, 118, 80);
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px black;
+            border: 2px solid rgb(3, 118, 80);
+            font-size: 12px;
+            padding: 10px;
+        }
+
+        .custom-line {
+            width: 5%;
+            height: 5px;
+            background-color: black;
+            border: none;
+            border-radius: 2px;
+            margin-left: 10%;
+        }
+
+        .div1 {
+            position: relative;
+            animation: moveFromRight 0.3s;
+        }
+
+        .div2 {
+            position: relative;
+            animation: moveFromLeft 0.3s;
+        }
+
+        @keyframes moveFromRight {
+
+            from {
+                right: 0px;
+            }
+
+            to {
+                right: 500px;
+            }
+        }
+
+        @keyframes moveFromLeft {
+
+            from {
+                left: 0px;
+            }
+
+            to {
+                left: 900px;
+            }
+        }
+
+        .div1,
+        .div2,
+        .div3 {
+            padding-left: 10%;
+        }
+
+        .one {
+            font-size: 50PX;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .two {
+            font-size: 50PX;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .three {
+            font-size: 50PX;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .div2 {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .div3 {
+            display: flex;
+            padding-left: 10%;
+        }
+
+        .btn1 {
+
+            display: flex;
+            color: aliceblue;
+            background-color: rgb(3, 118, 80);
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px black;
+            border: 2px solid rgb(3, 118, 80);
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .btn2 {
+            background-color: orangered;
+            color: aliceblue;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px black;
+            border: 2px solid orangered;
+            font-size: 20px;
+            padding: 10px;
+            margin-left: 10%;
+
+        }
+
+        .icon-container {
+            margin: 50px;
+            display: grid;
+            flex-basis: 100%;
+            border: 10px;
+            justify-content: space-around;
+            grid-template-columns: auto auto;
+            flex-wrap: wrap;
+        }
+
+        .icon-item {
+            background-color: white;
+            border: 1px solid whitesmoke;
+            border-radius: 8px;
+            margin: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .icon-item:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .info {
+            float: right;
+        }
+
+        .div5 {
+            display: inline;
+            height: 200px;
+            width: 100%;
+        }
+
+
+        @media screen and (max-width:900px) {
+            div {
+                flex-basis: 40%;
+            }
+        }
+
+        @media screen and (max-width:800px) {
+            div {
+                flex-basis: 100%;
+            }
+
+        }
+
+        .banner {
+            background-color: #1a1a2e;
+            color: aliceblue;
+            padding: 10px;
+            text-align: left;
+            padding-left: 5%;
+            font-family: arial, sans-serif;
+            align-items: center;
+            justify-content: space-around;
+            display: flex;
+        }
+
+        .banner h1 {
+            font-size: 2.5em;
+        }
+
+        .banner .highlight {
+            color: #00b894;
+        }
+
+        .banner .crpto {
+            color: #e17055;
+        }
+
+        .buttons {
+            padding: 10px 20px;
+            border: none;
+            color: aliceblue;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            margin-left: 50%;
+            border-radius: 5px;
+        }
+
+        .btn-green {
+            display: flex;
+            color: aliceblue;
+            background-color: #00b894;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px black;
+            border: 2px solid #00b894;
+            font-size: 20px;
+            padding-left: 10px;
+        }
+
+        .btn-red {
+            background-color: #e17055;
+            color: aliceblue;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px black;
+            border: 2px solid #e17055;
+            font-size: 20px;
+            padding-right: 10px;
+            margin-left: 20%;
+
+        }
+
+        .about1 {
+            text-align: center;
+            font-weight: bolder;
+        }
+
+        .menu {
+            display: flexbox;
+            gap: 30px;
+            justify-content: space-around;
+        }
+
+        .menu-item {
+            font-size: 18px;
+            color: black;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+
+        .menu-item.active {
+            color: red;
+            font-weight: bolder;
+        }
+
+        .btn6 {
+            color: black;
+            background-color: white;
+            border: none;
+            width: 10%;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px black;
+            border: 2px solid white;
+            font-size: 20px;
+            margin-left: 10%;
+            padding: 15px;
+        }
+
+        .btn7 {
+            color: black;
+            background-color: white;
+            border: none;
+            width: 10%;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px black;
+            border: 2px solid white;
+            font-size: 20px;
+            margin-left: 5%;
+            padding: 15px;
+        }
+
+        .btn8 {
+            color: black;
+            background-color: white;
+            border: none;
+            width: 10%;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px black;
+            border: 2px solid white;
+            font-size: 20px;
+            margin-left: 5%;
+            padding: 15px;
+        }
+
+        table {
+            border-style: ridge;
+            border: 1px solid black;
+            text-align: center;
+            font-weight: bolder;
+            height: 500px;
+            width: 1000px;
+        }
+
+        .side1 {
+            display: flex;
+        }
+
+
+        aside {
+            font-weight: bolder;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-left: 10%;
+
+        }
+
+        .btn5 {
+            color: aliceblue;
+            background-color: rgb(3, 118, 80);
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px black;
+            border: 2px solid rgb(3, 118, 80);
+            font-size: 20px;
+            padding: 10px;
+
+        }
+
+        .tity1 {
+            color: black;
+            font-size: 20px;
+            border-bottom: 2px solid black;
+        }
+
+        .column {
+            color: rgb(3, 118, 80);
+            font-weight: bolder;
+        }
+
+
+        .about2 {
+            text-align: center;
+            font-weight: bolder;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .container3 {
+            background-color: black;
+            height: 200px;
+            margin: 10px;
+            display: flex;
+            flex-flow: row;
+            flex-basis: 20%;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .trans1 {
+            margin: 50px;
+            display: grid;
+            padding-left: 50px;
+            flex-basis: 50%;
+            width: 60%;
+            justify-content: space-around;
+            grid-template-columns: auto auto;
+            flex-wrap: wrap;
+            background-color: white;
+            border: 1px solid whitesmoke;
+            border-radius: 8px;
+            margin: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo1 {
+            margin-right: 90%;
+        }
+
+        .text1 {
+            text-align: left;
+        }
+
+        .author2 {
+            font-weight: bolder;
+            font-size: 20px;
+
+        }
+
+        .mexcol {
+            color: #00b894;
+            font-weight: bolder;
+            font-size: 15px;
+        }
+
+        .leftimage {
+            float: right;
+            display: flex;
+        }
+
+        footer {
+            background-color: black;
+            color: aliceblue;
+            border-color: rgb(161, 127, 255);
+            padding: 10px 0px;
+            place-items: center;
+
+        }
+
+        .templatemo {
+            color: coral;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('mount.avif'); background-size: cover;">
+    <section id="home">
+        <header>
+            <div class="menu__bar">
+                <div class="imagi1">
+                    <img src="head.png" style="width: 200px; height: 50px;">
+                </div>
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#page">PAGE<i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown_menu">
+                            <ul>
+                                <li><a href="#">ABOUT</a></li>
+                                <li><a href="#">OUR SERVICE</a></li>
+                                <li><a href="#">CONTACT</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#testimonals">TESTIMONALS</a></li>
+                    <li><button type="button">CONTACT SUPPORT</button></li>
+                </ul>
+            </div>
+
+        </header>
+
+
+        <div class="div1">
+
+            <h1 class="one" STYLE="color: black;">GET <span STYLE="color: brown;">READY</span> FOR YOUR</h1>
+            <h1 class="two">BUSINESS</h1>
+            <h1 class="three">& UPGRADE ALL ASPECTS</h1>
+        </div>
+        <br>
+
+
+        <div class="custom-line"></div>
+        <br><br>
+
+
+        <div class="div2">
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quas ipsum dolorem quae<br> eum iusto,
+                nam
+                cumque commodi labore aperiam, dolor error omnis suscipit voluptas<br> tenetur officiis porro provident.
+            </h3>
+        </div>
+        <BR><BR>
+
+        <div class="div3">
+            <button type="button" class="btn1">DISCOVER ME</button>
+            <button type="button" class="btn2">CONTACT US</button>
+        </div>
+        <br><br><br><br><br><br><br><br><br>
+</section>
+
+<section id="services">
+    <div class="icon-container">
+        <div class="icon-item">
+            <img src="fold.png" height="80px" width="80px">
+            <div class="info">
+                <p>
+                <h3>CSS Templates</h3><br>
+                TemplateMo website is the best for you to explore and<br> download free website templates</p>
+            </div>
+        </div>
+
+
+        <div class="icon-item">
+            <img src="cloudy.png" height="100px">
+            <div class="info">
+                <p>
+                <h3>HTML5 Web Pages</h3><br>
+                Templates are based on Bootstrap 5 CSS framework.<br>You can easily adapt or modify based on your
+                needs.</p>
+            </div>
+        </div>
+
+
+        <div class="icon-item">
+            <img src="archy.png" height="150px">
+            <div class="info">
+                <p>
+                <h3>Fast Customer Support</h3><br>
+                Do not be hesitated to contact us if you have any question or<br> concern about our templates</p>
+            </div>
+        </div>
+
+
+        <div class="icon-item">
+            <img src="plug.png" height="100px">
+            <div class="info">
+                <p>
+                <h3>Responsive Designs</h3><br>
+                All of our CSS templates are 100% free to use for<br>commercial or business websites.</p>
+            </div>
+        </div>
+
+
+        <div class="icon-item">
+            <img src="suitcase.png" height="100px">
+            <div class="info">
+                <p>
+                <h3>Mobile and Tablet ready!</h3><br>
+                Our HTML CSS templates are well-tested on mobile, tablet,<br> and desktop compatibility.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="icon-item">
+            <img src="puzzle.png" height="100px" width="100px">
+            <div class="info">
+                <p>
+                <h3>Fully Customizable</h3><br>
+                If you have any idea or suggestion about new templates, feel<br> free to let us know</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br><br><br><br>
+
+<div class="banner">
+    <h1>Business<span class="highlight">Solution</span>and<br>Crpto<span class="crpto">Invesments</span></h1>
+    <div class="buttons">
+        <button type="button" class="btn btn-green">Discover me</button>
+        <button type="button" class="btn btn-red">Contact us</button>
+    </div>
+</div><br><br><br><br><br>
+
+<section id="about">
+    <div class="about1">
+        <p><span style="color:orangered; font-size:20px; font-family: arial,sans-serif;">ABOUT US</span>
+            <BR><br>
+            <span style="color:#1a1a2e; font-size:30px; font-family: arial,sans-serif;">Know Us Better</span>
+        </p>
+    </div>
+    <br><br><br><br>
+
+    <div class="menu">
+        <button class="btn6"><a href="#web design" class="menu-item">web design</a></button>
+        <button class="btn7"><a href="#Graphics" class="menu-item">Graphics</a></button>
+        <button class="btn8"><a href="#web code" class="menu-item">web code</a></button>
+    </div>
+    <br><br><br><br><br>
+
+    <div class="side1">
+        <table style="font-family: 'Montserrat', sans-serif;">
+            <tr class="tity1">
+                <th>Project Title</th>
+                <th>Budget</th>
+                <th>Deadline</th>
+                <th>Client</th>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <hr>
+                </td>
+            </tr>
+
+            <tr class="custom-line1">
+                <td class="column">Website Redesign</td>
+                <td>$1,500 to $2,200</td>
+                <td>2022 Dec 12</td>
+                <td>Web Biz</td>
+            </tr>
+
+            <tr>
+                <td colspan="4">
+                    <hr>
+                </td>
+            </tr>
+
+            <tr class="custom-line1">
+                <td class="column">Website Renovation</td>
+                <td>$2,500 to $3,600</td>
+                <td>2022 Dec 10</td>
+                <td>Online Ads</td>
+            </tr>
+
+            <tr>
+                <td colspan="4">
+                    <hr>
+                </td>
+            </tr>
+
+            <tr class="custom-line1">
+                <td class="column">Marketing Plan</td>
+                <td>$2,500 to $4,200</td>
+                <td>2022 Dec 8</td>
+                <td>Web Biz</td>
+            </tr>
+
+            <tr>
+                <td colspan="4">
+                    <hr>
+                </td>
+            </tr>
+
+            <tr class="custom-line1">
+                <td class="column">All-new Website</td>
+                <td>$3,000 to $6,600</td>
+                <td>2022 Dec 2</td>
+                <td>Web Presence</td>
+            </tr>
+        </table>
+
+        <aside>
+            <div>
+                <p style="font-family: 'Montserrat', sans-serif;"><span style="font-size:35px;">Please tell us about
+                        your
+                        idea<br> and how you want it to
+                        be</span><br><br><br>
+                    You are allowed to use this template for your<br>websites.You are <span
+                        style="font-size:30px; font-weight: bolder;">NOT allowed</span>to redistribute<br> the template
+                    ZIP file on any other template websites.<br><br><br>
+
+                    Thank you for downloading and using our<br> templates. Please tell your friends about
+                    our<br>website.<br><br><br><br>
+                    <button type="button" class="btn5">DISCOVER ME</button>
+                </p>
+            </div>
+        </aside>
+    </div>
+</section>
+<br><br><br><br>
+
+<section id="testimonals">
+    <div class="about2">
+        <p><span
+                style="color:orangered; font-size:15px; font-family: 'roboto',sans-serif; font-weight: bolder;">TESTIMONALS</span>
+            <BR><br>
+            <span
+                style="color:#1a1a2e; font-size:30px; font-family: 'Montserrat', sans-serif; font-weight: bolder;">What
+                They Say</span>
+        </p>
+    </div>
+    <br>
+
+    <center>
+        <div class="trans1">
+            <div class="logo">
+                <p class="logo1"><img src="quation.png" alt="icon" height="50px" width="50px"></p><br>
+                <p class="text1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel eaque delectus
+                    dignissimos quod velit totam nobis dolore enim beatae vitae repudiandae eos<br> quo,soluta
+                    adipisci maxime! Libero eum atque nobis wan to class or intersting.<br><br>
+                    <span class="author2">Gorge Louis Banner</span><br><br>
+                    <span class="mexcol">MEXANT FOUNDER</span>
+                </p>
+            </div>
+            <div class="leftimage">
+                <img src="img1.jpg" alt="IMAGE">
+            </div>
+        </div>
+
+        <div>
+            <input type="radio" id="option1" name="group1" value="option1">
+            <label for="option1"></label>
+            <input type="radio" id="option2" name="group1" value="option2">
+            <label for="option2"></label>
+            <input type="radio" id="option3" name="group1" value="option3">
+            <label for="option3"></label><br>
+        </div>
+    </center>
+</section>
+
+<section id="page">
+    <div class="container3">
+        <div>
+            <img src="comname.png" alt="companyname">
+        </div>
+
+        <div>
+            <img src="comname.png" alt="companyname">
+        </div>
+
+        <div>
+            <img src="comname.png" alt="companyname">
+        </div>
+
+        <div>
+            <img src="comname.png" alt="companyname">
+        </div>
+
+        <div>
+            <img src="comname.png" alt="companyname">
+        </div>
+
+        <div>
+            <img src="comname.png" alt="companyname">
+        </div>
+    </div>
+    <br>
+
+    <footer>
+        <center>
+
+            <p>Copyright © 2022 Mexant Co., Ltd. All Rights Reserved.</p>
+            <p>Designed by <a href="https://templatemo.com/"><span class="templatemo">templatemo</span></a></p>
+        </center>
+    </footer>
+</section>
+
+</body>
+
+</html>
